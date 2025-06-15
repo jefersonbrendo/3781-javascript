@@ -23,11 +23,11 @@ const ui = {
 
     const pensamentoConteudo = document.createElement("div");
     pensamentoConteudo.textContent = pensamento.conteudo;
-    pensamentoConteudo.classList.add("pensamento.conteudo");
+    pensamentoConteudo.classList.add("pensamento-conteudo");
     
     const pensamentoAutoria = document.createElement("div");
     pensamentoAutoria.textContent = pensamento.autoria;
-    pensamentoAutoria.classList.add("pensamento.autoria");
+    pensamentoAutoria.classList.add("pensamento-autoria");
     
     li.appendChild(iconeAspas);
     li.appendChild(pensamentoConteudo);
