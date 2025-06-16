@@ -5,15 +5,14 @@ document.addEventListener("DOMContentLoaded", () => {
   ui.renderizarPensamentos();
 
   const botaoCancelar = document.getElementById("botao-cancelar");
-  botaoCancelar.onclick = limparCamposDoFormulario;
+  botaoCancelar.addEventListener("click", manipularCancelamento)
 
   const formularioPensamento = document.getElementById("pensamento-form");
   formularioPensamento.addEventListener("submit", manipularSubmissaoFormulario);
 });
 
-function limparCamposDoFormulario() {
-  document.getElementById("pensamento-conteudo").value = "";
-  document.getElementById("pensamento-autoria").value = "";
+function manipularCancelamento() {
+  ui.limparFormulario()
 }
 
 async function manipularSubmissaoFormulario(event) {
