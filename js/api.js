@@ -37,16 +37,33 @@ const api = {
 
   async editarPensamento(pensamento) {
     try {
-      const response = await fetch(`http://localhost:3000/pensamentos/${pensamento.id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(pensamento),
-      });
+      const response = await fetch(
+        `http://localhost:3000/pensamentos/${pensamento.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(pensamento),
+        }
+      );
       return await response.json();
     } catch (err) {
       alert("Erro ao editar pensamento");
+      throw err;
+    }
+  },
+
+  async excluirPensamento(id) {
+    try {
+      const response = await fetch(
+        `http://localhost:3000/pensamentos/${id}`,
+        {
+          method: "DELETE"
+        }
+      );
+    } catch (err) {
+      alert("Erro ao excluir pensamento");
       throw err;
     }
   },
