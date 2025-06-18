@@ -19,12 +19,12 @@ const ui = {
     
 
     try {
-      const pensamentos = await api.buscarPensamentos();
-      pensamentos.forEach(ui.adicionarPensamentoNaLista);
+      const pensamentos = await api.buscarPensamentos();      
       if (pensamentos.length === 0) {
         mensagemVazia.style.display = "block";
       } else {
         mensagemVazia.style.display = "none";
+        pensamentos.forEach(ui.adicionarPensamentoNaLista);
       }  
     } catch (err) {
       alert("Erro ao renderizar pensamentos: " + err.message);
